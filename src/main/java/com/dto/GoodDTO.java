@@ -15,5 +15,5 @@ public class GoodDTO {
     @JsonProperty("name")
     private String name;
     @JsonProperty("delivery_date")
-    private XMLGregorianCalendar delivery_date;
+    private String delivery_date;
 }

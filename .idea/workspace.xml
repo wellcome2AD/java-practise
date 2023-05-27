@@ -5,22 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67200625-8313-414a-85e1-c985f8020f9d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/MySpringBootApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dto/GoodDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/entity/GoodEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/generated/Good.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/generated/ObjectFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mapper/GoodMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/router/RequestRouter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/router/SaveRouter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/router/StatusRouter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/router/MetricsRouter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dto/GoodDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dto/GoodDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/GoodEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/GoodEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mapper/GoodMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mapper/GoodMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/router/RequestRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/router/RequestRouter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/router/SaveRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/router/SaveRouter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

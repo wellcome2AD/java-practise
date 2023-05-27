@@ -9,8 +9,6 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.converter.jaxb.JaxbDataFormat;
 import org.springframework.stereotype.Component;
 
-import java.io.StringReader;
-
 @Component
 public class RequestRouter extends RouteBuilder {
 
@@ -22,14 +20,13 @@ public class RequestRouter extends RouteBuilder {
         onException(UnmarshalException.class)
                 .handled(true)
                 .setBody(simple("<status>error</status><message>Unmarshaling failed</message>"))
-                .to("direct:status");
-                //.to("direct:metrics_router_increment_fail_messages")
-                //.to("direct:metrics_router_stop_timer");
+                .to("direct:status")
+                .to("direct:metrics_router_increment_fail_messages")
+                .to("direct:metrics_router_stop_timer");
 
-        // Kafka Consumer
         from("kafka:requests?brokers=localhost:9092")
-                //.to("direct:metrics_router_increment_total_messages")
-                //.to("direct:metrics_router_start_timer")
+                .to("direct:metrics_router_increment_total_messages")
+                .to("direct:metrics_router_start_timer")
                 .unmarshal(jaxb)
                 .choice()
                     .when(body().isInstanceOf(Good.class))
@@ -38,9 +35,9 @@ public class RequestRouter extends RouteBuilder {
                     .to("direct:save_to_db")
                 .otherwise()
                     .setBody(simple("<status>error</status><message>XML data isn't instance of Good</message>"))
-                    .to("direct:status");
-                    //.to("direct:metrics_router_increment_fail_messages")
-                    //.to("direct:metrics_router_stop_timer");
+                    .to("direct:status")
+                    .to("direct:metrics_router_increment_fail_messages")
+                    .to("direct:metrics_router_stop_timer");
 
     }
 }

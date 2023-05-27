@@ -9,7 +9,10 @@ import org.mapstruct.Mapping;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
-import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 @Mapper(componentModel = "spring")
@@ -22,24 +25,16 @@ public interface GoodMapper {
     @Mapping(target = "delivery_date", source = "deliveryDate")
     GoodEntity mapGenerated(Good generated);
 
-    default Date map(XMLGregorianCalendar calendar)
+    default Date mapXMLGregorianCalendar(XMLGregorianCalendar calendar)
     {
-        return new java.sql.Date(calendar.toGregorianCalendar().getTime().getTime());
+        Date date = calendar.toGregorianCalendar().getTime();
+        return date;
     }
 
-    default String mapXMLGregorianCalendar(XMLGregorianCalendar date) {
-        return date.toString();
-    }
-
-    default XMLGregorianCalendar mapDate(Date date) {
-        GregorianCalendar gregorianCalendar = new GregorianCalendar();
-        gregorianCalendar.setTime(date);
-        DatatypeFactory dTF = null;
-        try {
-            dTF = DatatypeFactory.newInstance();
-        } catch (DatatypeConfigurationException e) {
-            throw new RuntimeException(e);
-        }
-        return dTF.newXMLGregorianCalendar(gregorianCalendar);
+    default String mapDate(Date date) {
+        String pattern = "yyyy-MM-dd HH:mm:ss";
+        DateFormat df = new SimpleDateFormat(pattern);
+        String res = df.format(date);
+        return res;
     }
 }
