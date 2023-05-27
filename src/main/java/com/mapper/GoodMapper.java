@@ -32,7 +32,7 @@ public interface GoodMapper {
     }
 
     default String mapDate(Date date) {
-        String pattern = "yyyy-MM-dd HH:mm:ss";
+        String pattern = "yyyy-MM-dd";
         DateFormat df = new SimpleDateFormat(pattern);
         String res = df.format(date);
         return res;
