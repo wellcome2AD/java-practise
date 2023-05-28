@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.model.dataformat.JsonLibrary;
 import org.springframework.stereotype.Component;
+import org.apache.camel.catalog.JSonSchemaResolver;
 
 @Component
 @RequiredArgsConstructor
@@ -34,8 +35,8 @@ public class SaveRouter extends RouteBuilder {
 
                             exchange.getMessage().setBody(good, GoodDTO.class);
                         })
-                        .log("Sending ${body} to kafka")
                         .marshal().json(JsonLibrary.Jackson)
+                        .log("Sending ${body} to kafka")
                         .to("kafka:results?brokers=localhost:9092")
                         .setBody(simple("<status>ok</status>"))
                         .to("direct:status")
