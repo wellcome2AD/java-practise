@@ -2,10 +2,6 @@ package com.entity;
 
 import javax.persistence.*;
 import lombok.Data;
-
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.Date;
 
 

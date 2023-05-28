@@ -15,7 +15,6 @@ import org.springframework.test.annotation.DirtiesContext;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 @CamelSpringBootTest
 @EnableAutoConfiguration
@@ -51,7 +50,7 @@ public class Tests {
     }
 
     @Test
-    public void kafkaResultsResultsTest() throws InterruptedException {
+    public void kafkaResultsTest() throws InterruptedException {
         kafkaResults.expectedBodiesReceived("{\"name\":\"cellphone\",\"delivery_date\":\"2023-05-29\"}");
 
         producerTemplate.sendBody("direct:requests", "<good><name>cellphone</name>" +

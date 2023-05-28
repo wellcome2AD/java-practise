@@ -6,14 +6,10 @@ import com.generated.Good;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 
 @Mapper(componentModel = "spring")
 public interface GoodMapper {

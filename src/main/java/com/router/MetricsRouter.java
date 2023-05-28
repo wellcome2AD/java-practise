@@ -26,6 +26,7 @@ public class MetricsRouter extends RouteBuilder {
                     exchange.setProperty("message", messageBody);
                     exchange.setProperty("time", System.currentTimeMillis() - startTime);
                 })
-                .to("sql:INSERT INTO processing_time(message, milliseconds) VALUES(:#${exchangeProperty.message}, :#${exchangeProperty.time});");
+                .to("sql:INSERT INTO processing_time(message, milliseconds) " +
+                            "VALUES(:#${exchangeProperty.message}, :#${exchangeProperty.time});");
     }
 }
